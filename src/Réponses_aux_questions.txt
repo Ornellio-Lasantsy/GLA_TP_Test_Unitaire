@@ -1,0 +1,34 @@
+
+
+			REPONSES AUX QUESTIONS :
+		
+		3 – Tester la méthode add avec le cas de test précédemment défini : « Run > Run As > JUnit test ».
+		 Que se passe-t-il ? Comment l'expliquez-vous ?
+
+==> Lorsque on exécute le test testSimpleAdd dans MoneyTest, on crée deux objets Money avec les montants 12 et 14, tous deux en "CHF".
+
+Ensuite, on appele la méthode add sur m12CHF avec m14CHF comme argument, ce qui retourne un nouvel objet Money avec un montant de 26 et la devise "CHF".
+
+Ensuite, on utilise assertTrue(expected.equals(result)) pour vérifier si l'objet result qu'on obtient de l'addition est égal à l'objet expected qu'on a prédéfini.
+
+Si le test passe correctement, cela signifie que l'implémentation de la méthode add dans la classe Money est correcte, car l'addition de 12 CHF et 14 CHF devrait effectivement donner 26 CHF.
+
+Si le test échoue, cela signifie qu'il y a probablement un problème dans l'implémentation de la méthode add dans la classe Money.
+
+Mais dans notre cas, le test s'est passé correctement.
+
+
+		5 – Relancer la classe de test MoneyTest. Que se passe-t-il ? 
+
+==> Nous avons désormais deux tests en éxecution : 
+		* testSimpleAdd : qui fait les mêmes choses que précedentes 
+		* testEquals : qui crée deux objets Money : m12CHF et m14CHF,
+	tous deux en "CHF" avec des montants de 12 et 14 respectivement.
+
+Effectue ensuite plusieurs assertions pour tester l'égalité des objets :
+	assertTrue(!m12CHF.equals(null)) : Vérifie que m12CHF n'est pas égal à null.
+	assertEquals(m12CHF, m12CHF) : Vérifie que m12CHF est égal à lui-même.
+	assertEquals(m12CHF, new Money(12, "CHF")) : Vérifie que m12CHF est égal à un nouvel objet Money avec les mêmes valeurs (12 et "CHF").
+	assertTrue(!m12CHF.equals(m14CHF)) : Vérifie que m12CHF n'est pas égal à m14CHF.
+
+
